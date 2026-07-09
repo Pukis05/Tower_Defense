@@ -1,4 +1,4 @@
-using UnityEditor;
+
 using UnityEngine;
 
 public class MGTurret : MonoBehaviour
@@ -95,11 +95,7 @@ public class MGTurret : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(
-            transform.position,
-            transform.forward,
-            targetingRange
-        );
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, targetingRange);
     }
 }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -135,6 +137,7 @@ public class Tower : MonoBehaviour
         UIManager.main.SetHoveringState(false);
     }
 
+    #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.cyan;
@@ -144,6 +147,7 @@ public class Tower : MonoBehaviour
             targetingRange
         );
     }
+    #endif
     public void Upgrade()
     {
         if (level >= maxLevel) return;  
